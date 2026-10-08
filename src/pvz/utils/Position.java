@@ -1,4 +1,4 @@
-package pvz.utils;
+package utils;
 
 public class Position {
 

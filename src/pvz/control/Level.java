@@ -1,4 +1,4 @@
-package pvz.control;
+package control;
 
 /**
  * Difficulty preset for a game session.
@@ -12,13 +12,12 @@ public enum Level {
 
 	// TODO fill your code
 
-	private int numberOfZombies;
 	
-	private double zombieFrequency;
+	
+	
 
-	private Level(int numberOfZombies, double zombieFrequency) {
-		this.numberOfZombies = numberOfZombies;
-		this.zombieFrequency = zombieFrequency;
+	private Level() {
+		
 	}
 
 	// TODO fill your code

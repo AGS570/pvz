@@ -1,4 +1,4 @@
-package pvz.utils;
+package utils;
 
 /**
  * Utility methods for fixed-width string formatting used by the view layer.

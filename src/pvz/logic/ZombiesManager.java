@@ -1,4 +1,5 @@
-package pvz.logic;
+package logic;
+
 
 
 
@@ -6,9 +7,9 @@ package pvz.logic;
 
 import java.util.Random;
 
-import pvz.control.Level;
-import pvz.logic.gameobjects.Zombie;
-import pvz.logic.gameobjects.ZombieList;
+import control.Level;
+import logic.gameobjects.Zombie;
+import logic.gameobjects.ZombieList;
 
 /**
  * Manages the full lifecycle of zombies for a game session.
@@ -29,7 +30,7 @@ public class ZombiesManager {
 
 	private int remainingZombies;
 
-	private pvz.logic.gameobjects.ZombieList zombies;
+	private ZombieList zombies;
 
 	public ZombiesManager(Game game, Level level, Random rand) {
 		this.game = game;

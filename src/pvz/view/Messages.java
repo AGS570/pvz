@@ -1,8 +1,8 @@
-package pvz.view;
+package view;
 
-import pvz.control.Level;
-import pvz.logic.gameobjects.PeaShooter;
-import pvz.logic.gameobjects.SunFlower;
+import control.Level;
+import logic.gameobjects.PeaShooter;
+import logic.gameobjects.SunFlower;
 
 
 /**

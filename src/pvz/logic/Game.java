@@ -1,19 +1,24 @@
-package pvz.logic;
+package logic;
 
-import pvz.control.Level;
-import pvz.utils.Position;
+import java.util.Random;
+
+import control.Level;
+import utils.Position;
 
 public class Game {
 	public static final int NUM_ROWS = 4;
 	public static final int NUM_COLS = 8;
 	
 	
-	int soles  = 50;
-	int ciclos =0;
+	int soles ;
+	int ciclos ;
+	Random rand;
 	
 	//constructoras----------------------
 	public Game() {
-		
+		soles = 50;
+		ciclos = 0;
+
 	}
 	public Game(long seed, Level level) {
 		// TODO Auto-generated constructor stub
