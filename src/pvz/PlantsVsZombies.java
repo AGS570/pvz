@@ -2,10 +2,10 @@ package pvz;
 
 import java.util.Locale;
 
-import control.Controller;
-import control.Level;
-import logic.Game;
-import view.Messages;
+import pvz.control.Controller;
+import pvz.control.Level;
+import pvz.logic.Game;
+import pvz.view.Messages;
 
 /**
  * Application entry point.

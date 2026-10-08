@@ -1,9 +1,9 @@
-package logic;
+package pvz.logic;
 
 import java.util.Random;
 
-import control.Level;
-import logic.Position;
+import pvz.control.Level;
+import pvz.logic.Position;
 
 public class Game {
 	public static final int NUM_ROWS = 4;
@@ -38,7 +38,7 @@ public class Game {
 	}
 	public String positionToString(Position position) {
 		// TODO Auto-generated method stub
-		return null;
+		return position.toString();
 	}
 	public Object getSuncoins() {
 		// TODO Auto-generated method stub
@@ -50,6 +50,10 @@ public class Game {
 	}
 	public void sun() {
 		this.soles +=20;
+	}
+	public void reset() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

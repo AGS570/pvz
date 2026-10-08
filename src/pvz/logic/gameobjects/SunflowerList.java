@@ -1,4 +1,4 @@
-package logic.gameobjects;
+package pvz.logic.gameobjects;
 
 import java.util.ArrayList;
 import java.util.List;

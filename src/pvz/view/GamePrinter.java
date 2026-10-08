@@ -1,13 +1,13 @@
-package view;
-import logic.Position;
-import static view.Messages.PROMPT;
-import static view.Messages.debug;
-import static view.Messages.error;
-import static utils.StringUtils.*;
+package pvz.view;
+import pvz.logic.Position;
+import static pvz.view.Messages.PROMPT;
+import static pvz.view.Messages.debug;
+import static pvz.view.Messages.error;
+import static pvz.utils.StringUtils.*;
 
-import logic.Game;
-import logic.Position;
-import utils.StringUtils;
+import pvz.logic.Game;
+import pvz.logic.Position;
+import pvz.utils.StringUtils;
 
 import java.util.Scanner;
 

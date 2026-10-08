@@ -1,8 +1,8 @@
-package logic.gameobjects;
+package pvz.logic.gameobjects;
 
-import logic.Game;
-import view.Messages;
-import logic.Position;
+import pvz.logic.Game;
+import pvz.logic.Position;
+import pvz.view.Messages;
 
 public class PeaShooter {
 

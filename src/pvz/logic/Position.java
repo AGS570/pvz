@@ -1,4 +1,4 @@
-package logic;
+package pvz.logic;
 
 public class Position {
 

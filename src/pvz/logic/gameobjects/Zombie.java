@@ -1,8 +1,8 @@
-package logic.gameobjects;
+package pvz.logic.gameobjects;
 
-import logic.Game;
-import logic.Position;
-import view.Messages;
+import pvz.logic.Game;
+import pvz.logic.Position;
+import pvz.view.Messages;
 
 public class Zombie {
 	private int health;

@@ -1,9 +1,9 @@
-package control;
+package pvz.control;
 
-import logic.Game;
-import view.GamePrinter;
-import view.GameView;
-import view.Messages;
+import pvz.logic.Game;
+import pvz.view.GamePrinter;
+import pvz.view.GameView;
+import pvz.view.Messages;
 
 /**
  * Input/output coordinator of the game (the C in MVC).
@@ -57,7 +57,26 @@ public class Controller {
 							// El comando "exit" enciende el interruptor para forzar el final de la partida[cite: 1].
 							exitGame = true;
 							break;
-							
+						case "r":
+						case "reset":
+							this.game.reset();
+							break;
+						case"h":
+						case "help":
+							view.showError(Messages.HELP);
+							break;
+						case "l":
+						case "list":
+							//TODO
+							view.showMessage(Messages.SUNFLOWER_DESCRIPTION + "\n" + Messages.PEASHOOTER_DESCRIPTION);
+							break;
+						case "a":
+						case "add":
+							if(words.length < 4) {
+								if(words[2] == "peaShooter" || words[2]=="p") {
+									this.game.add()
+								}
+							}
 						default:
 							// Si no reconoce la orden, muestra un error. El tiempo no avanza[cite: 1].
 							view.showError(Messages.UNKNOWN_COMMAND);
@@ -71,6 +90,7 @@ public class Controller {
 					// Si el comando introducido consume un ciclo de tiempo (como "none")...
 					if (cycleAdvanced) {
 						// 3. GAME ACTION y 4. UPDATE: Se avisa a la lógica (Game) para que actúen zombis y plantas[cite: 1].
+						
 						game.update();
 						
 						// 1. DRAW: Se vuelve a pintar el tablero para reflejar los movimientos y cambios[cite: 1].
@@ -79,6 +99,4 @@ public class Controller {
 				}
 				view.showEndMessage();
 	}
-  
-
 }
