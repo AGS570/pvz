@@ -9,19 +9,18 @@ package control;
  * a game.
  */
 public enum Level {
+	EASY(3,0.1), HARD(5,0.2), INSANE(10,0.3);
+	// TODO fill your code
+	private int numberOfZombies;
+	
+	private double zombieFrequency;
 
 	// TODO fill your code
 
-	
-	
-	
-
-	private Level() {
-		
+	private Level(int numberOfZombies, double zombieFrequency) {
+		this.numberOfZombies = numberOfZombies;
+		this.zombieFrequency = zombieFrequency;
 	}
-
-	// TODO fill your code
-
 	/**
 	 * Parse a string and return any matching level
 	 * 
@@ -56,19 +55,19 @@ public enum Level {
 		}
 		return buffer.toString();
 	}
-}
-
-
-/// consultas----------
-/// 
 
 	public int getNumberOfZombies() {
+		// TODO Auto-generated method stub
 		return this.numberOfZombies;
 	}
-	
 	public double getZombieFrequency() {
+		// TODO Auto-generated method stub
 		return this.zombieFrequency;
 	}
-
 	
 }
+
+
+
+
+

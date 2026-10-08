@@ -3,7 +3,7 @@ package logic;
 import java.util.Random;
 
 import control.Level;
-import utils.Position;
+import logic.Position;
 
 public class Game {
 	public static final int NUM_ROWS = 4;
@@ -47,6 +47,9 @@ public class Game {
 	public Object getCycles() {
 		// TODO Auto-generated method stub
 		return this.ciclos;
+	}
+	public void sun() {
+		this.soles +=20;
 	}
 	
 }

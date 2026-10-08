@@ -6,7 +6,7 @@ import static view.Messages.error;
 import static utils.StringUtils.*;
 
 import logic.Game;
-import utils.Position;
+import logic.Position;
 import utils.StringUtils;
 
 import java.util.Scanner;

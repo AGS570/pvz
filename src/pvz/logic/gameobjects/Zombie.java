@@ -1,7 +1,7 @@
 package logic.gameobjects;
 
 import logic.Game;
-import utils.Position;
+import logic.Position;
 import view.Messages;
 
 public class Zombie {

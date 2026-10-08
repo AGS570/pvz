@@ -2,7 +2,7 @@ package logic.gameobjects;
 
 import logic.Game;
 import view.Messages;
-import utils.Position;
+import logic.Position;
 
 public class SunFlower {
 
@@ -23,4 +23,7 @@ public class SunFlower {
 		return Messages.SUNFLOWER_ICON ;
 	}
 
+	public void update() {
+		this.game.sun();
+	}
 }
