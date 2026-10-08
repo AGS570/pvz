@@ -73,9 +73,14 @@ public class Controller {
 						case "a":
 						case "add":
 							if(words.length < 4) {
-								if(words[2] == "peaShooter" || words[2]=="p") {
-									this.game.add()
-								}
+								if(words[1] == "peaShooter" || words[1]=="p") {
+									this.game.addPeaShooter(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+								}else if(words[1] == "SunFlower" || words[3]=="s") {
+									this.game.addSunFlower(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+								}else
+									view.showError(Messages.INVALID_GAME_OBJECT);
+							}else {
+								view.showError(Messages.COMMAND_PARAMETERS_MISSING);
 							}
 						default:
 							// Si no reconoce la orden, muestra un error. El tiempo no avanza[cite: 1].

@@ -55,5 +55,13 @@ public class Game {
 		// TODO Auto-generated method stub
 		
 	}
+	public void addPeaShooter(int int1, int int2) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void addSunFlower(int int1, int int2) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

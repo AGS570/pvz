@@ -21,4 +21,6 @@ public class PeaShooterList {
 	public int size() {
 		return this.lista.size();
 	}
+	
+	
 }
