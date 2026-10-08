@@ -77,7 +77,7 @@ public class ZombiesManager {
 	// por hacer------------------------------------
 	private int getRemainingZombies() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.remainingZombies;
 	}
 
 	private boolean isPositionEmpty(int numCols, int row) {

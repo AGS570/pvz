@@ -37,11 +37,11 @@ public class Game {
 	}
 	public Object getSuncoins() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.soles;
 	}
 	public Object getCycles() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.ciclos;
 	}
 	
 }
