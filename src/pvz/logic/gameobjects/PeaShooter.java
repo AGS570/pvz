@@ -31,9 +31,6 @@ public class PeaShooter {
 		return Messages.PEASHOOTER_ICON;
 	}
 
-	
-	
-
 	public boolean isInPosition(Position pos2) {
 		// TODO Auto-generated method stub
 		if (pos.getCol() == pos2.getCol() & pos.getRow() == pos2.getRow()) {
