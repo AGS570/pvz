@@ -40,6 +40,7 @@ public class SunflowerList {
 	        if(lista.get(i).isInPosition(pos)){
 	        	return lista.get(i).getDescription();
 	        }
+	        i++;
 	    }
 
 	    return null;

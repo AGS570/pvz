@@ -20,7 +20,7 @@ public class Zombie {
 
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return Messages.ZOMBIE_ICON + "["+ this.health + "]";
+		return Messages.ZOMBIE_ICON.formatted(health);
 	}
 	
 	public boolean isInPosition(Position pos2) {

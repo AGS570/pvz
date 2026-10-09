@@ -74,7 +74,7 @@ public class ZombiesManager {
 		if(canAdd) {
 			// TODO fill your code
 			this.remainingZombies--;
-			Position p = new Position( row,Game.NUM_COLS);
+			Position p = new Position( row,Game.NUM_COLS-1);
 			this.zombies.insert(new Zombie(p,this.game));
 		}
 		return canAdd;

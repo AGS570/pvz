@@ -32,6 +32,7 @@ private List<Zombie> lista;
 	        if(lista.get(i).isInPosition(pos)){
 	        	return lista.get(i).getDescription();
 	        }
+	        i++;
 	    }
 
 	    return null;

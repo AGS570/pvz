@@ -42,7 +42,7 @@ public class Game {
 		this.SunFlowers = new SunflowerList();
 		//this.Zombies = new ZombieList();
 		this.level = level;
-		this.rand = new Random();
+		this.rand = new Random(seed);
 		this.zombieMngr = new ZombiesManager(this,level,rand);
 	}
 
@@ -72,7 +72,7 @@ public class Game {
 		if(ret != null) return ret;
 		ret = SunFlowers.PositionToString(position);
 		if(ret != null) return ret;
-		ret = SunFlowers.PositionToString(position);
+		ret = zombieMngr.PositionToString(position);
 		if(ret != null) return ret;
 		return "";
 		
@@ -93,6 +93,7 @@ public class Game {
 		// TODO Auto-generated method stub
 		
 	}
+	
 	public boolean addPeaShooter(int int1, int int2) {
 		Position pos = new Position(int1,int2);
 		// TODO Auto-generated method stub
