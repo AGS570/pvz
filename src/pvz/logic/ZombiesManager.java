@@ -59,8 +59,12 @@ public class ZombiesManager {
 	}
 	
 	public boolean addZombie() {
-		int row = randomZombieRow();
-		return addZombie(row);
+		if(this.remainingZombies > 0) {
+			
+			int row = randomZombieRow();
+			this.remainingZombies--;
+			return addZombie(row);
+		}else return false;
 	}
 
 	public boolean addZombie(int row) {
@@ -69,6 +73,8 @@ public class ZombiesManager {
 
 		if(canAdd) {
 			// TODO fill your code
+			Position p = new Position(Game.NUM_COLS, row);
+			this.zombies.insert(new Zombie(p,this.game));
 		}
 		return canAdd;
 	}
@@ -76,7 +82,7 @@ public class ZombiesManager {
 	
 
 	// por hacer------------------------------------
-	private int getRemainingZombies() {
+	public int getRemainingZombies() {
 		// TODO Auto-generated method stub
 		return this.remainingZombies;
 	}

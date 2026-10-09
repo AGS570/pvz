@@ -19,7 +19,7 @@ public class Game {
 	int soles ;
 	int ciclos ;
 	Random rand;
-	ZombieList Zombies;
+	//ZombieList Zombies;
 	SunflowerList SunFlowers;
 	PeaShooterList PeaShooters;
 	ZombiesManager zombieMngr;
@@ -31,7 +31,7 @@ public class Game {
 		ciclos = 0;
 		this.PeaShooters = new PeaShooterList();
 		this.SunFlowers = new SunflowerList();
-		this.Zombies = new ZombieList();
+		//this.Zombies = new ZombieList();
 		
 	}
 	public Game(long seed, Level level) {
@@ -40,7 +40,7 @@ public class Game {
 		ciclos = 0;
 		this.PeaShooters = new PeaShooterList();
 		this.SunFlowers = new SunflowerList();
-		this.Zombies = new ZombieList();
+		//this.Zombies = new ZombieList();
 		this.level = level;
 		this.rand = new Random();
 		this.zombieMngr = new ZombiesManager(this,level,rand);
@@ -61,7 +61,7 @@ public class Game {
 	}
 	public Object getRemainingZombies() {
 		// TODO Auto-generated method stub
-		return this.Zombies.size();
+		return this.zombieMngr.getRemainingZombies();
 	}
 	public String positionToString(Position position) {
 		// TODO Auto-generated method stub
