@@ -50,7 +50,7 @@ public class Game {
 		this.ciclos++;
 		
 		for(int i =0; i < SunFlowers.size();i++) {
-			SunFlowers.getSun();
+			this.soles += SunFlowers.getSun();
 		}
 		this.zombieMngr.addZombie();
 	}
@@ -86,9 +86,7 @@ public class Game {
 		return this.ciclos;
 	}
 	
-	public void sun(int sunPoints) {
-		this.soles += sunPoints;
-	}
+	
 	public void reset() {
 		// TODO Auto-generated method stub
 		

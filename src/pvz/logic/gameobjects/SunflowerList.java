@@ -38,7 +38,7 @@ public class SunflowerList {
 
 	    while (i < lista.size() && !encontrada) {
 	        if(lista.get(i).isInPosition(pos)){
-	        	return lista.get(i).getDescription();
+	        	return lista.get(i).getIcon();
 	        }
 	        i++;
 	    }

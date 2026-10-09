@@ -32,6 +32,7 @@ public class PeaShooter {
 	}
 
 	
+	
 
 	public boolean isInPosition(Position pos2) {
 		// TODO Auto-generated method stub
