@@ -21,6 +21,10 @@ public class Position {
     public int getCol() {
         return col;
     }
-
+ 
+    public boolean isValid(int r, int c) {
+    	if(this.fil < r && this.fil >= 0 && this.col < c && this.col >=0) return true;
+    	return false;
+    }
 	
 }

@@ -55,6 +55,8 @@ public class Game {
 	}
 	public String positionToString(Position position) {
 		// TODO Auto-generated method stub
+		
+			
 		String ret;
 		ret = PeaShooters.PositionToString(position);
 		if(ret != null) return ret;
@@ -62,8 +64,8 @@ public class Game {
 		if(ret != null) return ret;
 		ret = SunFlowers.PositionToString(position);
 		if(ret != null) return ret;
+		return "";
 		
-		return ret;
 	}
 	public Object getSuncoins() {
 		// TODO Auto-generated method stub
@@ -81,19 +83,25 @@ public class Game {
 		
 	}
 	public boolean addPeaShooter(int int1, int int2) {
-		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
-		return this.PeaShooters.insert(new PeaShooter(pos,this));
+		// TODO Auto-generated method stub
+		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+		return this.PeaShooters.insert(new PeaShooter(pos,this));}
+		else return false;
 	}
 	public boolean addSunFlower(int int1, int int2) {
 		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
-		return this.SunFlowers.insert(new SunFlower(pos,this));
+		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+		return this.SunFlowers.insert(new SunFlower(pos,this));}
+		else return false;
 	}
 	public boolean addZombie(int int1, int int2) {
 		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
-		return this.Zombies.insert(new Zombie(pos,this));
+		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+		return this.Zombies.insert(new Zombie(pos,this));}
+		else return false;
 		
 	}
 	
