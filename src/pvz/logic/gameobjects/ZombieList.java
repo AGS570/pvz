@@ -3,6 +3,8 @@ package pvz.logic.gameobjects;
 import java.util.ArrayList;
 import java.util.List;
 
+import pvz.logic.Position;
+
 public class ZombieList {
 private List<Zombie> lista;
 	
@@ -10,8 +12,8 @@ private List<Zombie> lista;
 		this.lista = new ArrayList();
 	}
 	
-	public void  insert(Zombie p) {
-		this.lista.add(p);
+	public boolean  insert(Zombie p) {
+		return this.lista.add(p);
 	}
 	
 	public void remove(Zombie p) {
@@ -20,5 +22,18 @@ private List<Zombie> lista;
 	
 	public int size() {
 		return this.lista.size();
+	}
+	
+	public String PositionToString(Position pos) {
+	    boolean encontrada = false;
+	    int i = 0;
+
+	    while (i < lista.size() && !encontrada) {
+	        if(lista.get(i).isInPosition(pos)){
+	        	return lista.get(i).getDescription();
+	        }
+	    }
+
+	    return null;
 	}
 }

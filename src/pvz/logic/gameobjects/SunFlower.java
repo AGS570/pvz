@@ -11,6 +11,7 @@ public class SunFlower {
 	private int fr;
 	private Game game;
 	private Position pos;
+	private int sunPoints = 20;
 	
 	public SunFlower(Position pos, Game game) {
 		this.health = 3;
@@ -22,12 +23,25 @@ public class SunFlower {
 		// TODO Auto-generated constructor stub
 		
 	}
-	public static Object getDescription() {
+	public static  String getDescription() {
 		// TODO Auto-generated method stub
-		return Messages.SUNFLOWER_ICON ;
+		return Messages.SUNFLOWER_ICON;
 	}
-
+	public String getIcon() {
+		return getDescription().formatted(this.health);
+	}
 	public void update() {
 		this.game.sun();
+	}
+	public int getSun() {
+		// TODO Auto-generated method stub
+		return this.sunPoints;
+	}
+	public boolean isInPosition(Position pos2) {
+		// TODO Auto-generated method stub
+		if (pos.getCol() == pos2.getCol() & pos.getRow() == pos2.getRow()) {
+			return true;
+		}
+		return false;
 	}
 }

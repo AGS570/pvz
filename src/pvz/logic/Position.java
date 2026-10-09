@@ -14,4 +14,13 @@ public class Position {
 		return fil + " " + col;
 	}
 
+	public int getRow() {
+        return fil;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+	
 }

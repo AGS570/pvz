@@ -21,8 +21,17 @@ public class Zombie {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static Object getDescription() {
+	public String getDescription() {
 		// TODO Auto-generated method stub
-		return Messages.ZOMBIE_ICON ;
+		return Messages.ZOMBIE_ICON + "["+ this.health + "]";
 	}
+	
+	public boolean isInPosition(Position pos2) {
+		// TODO Auto-generated method stub
+		if (pos.getCol() == pos2.getCol() & pos.getRow() == pos2.getRow()) {
+			return true;
+		}
+		return false;
+	}
+	
 }

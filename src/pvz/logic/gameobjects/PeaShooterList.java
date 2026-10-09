@@ -3,6 +3,8 @@ package pvz.logic.gameobjects;
 import java.util.ArrayList;
 import java.util.List;
 
+import pvz.logic.Position;
+
 public class PeaShooterList {
 	private List<PeaShooter> lista;
 	
@@ -10,8 +12,8 @@ public class PeaShooterList {
 		this.lista = new ArrayList();
 	}
 	
-	public void  insert(PeaShooter p) {
-		this.lista.add(p);
+	public boolean  insert(PeaShooter p) {
+		return this.lista.add(p);
 	}
 	
 	public void remove(PeaShooter p) {
@@ -20,6 +22,19 @@ public class PeaShooterList {
 	
 	public int size() {
 		return this.lista.size();
+	}
+	
+	public String PositionToString(Position pos) {
+	    boolean encontrada = false;
+	    int i = 0;
+
+	    while (i < lista.size() && !encontrada) {
+	        if(lista.get(i).isInPosition(pos)){
+	        	return lista.get(i).getIcon();
+	        }
+	    }
+
+	    return null;
 	}
 	
 	
