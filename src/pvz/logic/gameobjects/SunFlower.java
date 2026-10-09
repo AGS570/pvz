@@ -18,6 +18,10 @@ public class SunFlower {
 		this.pos = pos;
 		this.fr = 1;
 	}
+	public SunFlower(int int1, int int2) {
+		// TODO Auto-generated constructor stub
+		
+	}
 	public static Object getDescription() {
 		// TODO Auto-generated method stub
 		return Messages.SUNFLOWER_ICON ;

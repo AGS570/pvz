@@ -53,10 +53,7 @@ public class GamePrinter implements GameView {
 		this.scanner = new Scanner(System.in);
 	}
 
-	private static String repeat(String space2, int marginSize) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	/**
 	 * Builds a string that represent the game status: cycles, suncoins, remaining zombies.

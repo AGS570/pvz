@@ -4,6 +4,12 @@ import java.util.Random;
 
 import pvz.control.Level;
 import pvz.logic.Position;
+import pvz.logic.gameobjects.PeaShooter;
+import pvz.logic.gameobjects.PeaShooterList;
+import pvz.logic.gameobjects.SunFlower;
+import pvz.logic.gameobjects.SunflowerList;
+import pvz.logic.gameobjects.Zombie;
+import pvz.logic.gameobjects.ZombieList;
 
 public class Game {
 	public static final int NUM_ROWS = 4;
@@ -13,12 +19,18 @@ public class Game {
 	int soles ;
 	int ciclos ;
 	Random rand;
+	ZombieList Zombies;
+	SunflowerList SunFlowers;
+	PeaShooterList PeaShooters;
+
 	
 	//constructoras----------------------
 	public Game() {
 		soles = 50;
 		ciclos = 0;
-
+		this.PeaShooters = new PeaShooterList();
+		this.SunFlowers = new SunflowerList();
+		this.Zombies = new ZombieList();
 	}
 	public Game(long seed, Level level) {
 		// TODO Auto-generated constructor stub
@@ -57,11 +69,16 @@ public class Game {
 	}
 	public void addPeaShooter(int int1, int int2) {
 		// TODO Auto-generated method stub
+		this.PeaShooters.insert(new PeaShooter(int1,int2));
 		
 	}
 	public void addSunFlower(int int1, int int2) {
 		// TODO Auto-generated method stub
-		
+		this.SunFlowers.insert(new SunFlower(int1,int2));
+	}
+	public void addZombie(int int1, int int2) {
+		// TODO Auto-generated method stub
+		this.Zombies.insert(new Zombie(int1,int2));
 	}
 	
 }

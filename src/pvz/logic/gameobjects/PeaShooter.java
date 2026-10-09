@@ -18,6 +18,10 @@ public class PeaShooter {
 		this.fr = 1;
 	}
 	
+	public PeaShooter(int int1, int int2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public static Object getDescription() {
 		// TODO Auto-generated method stub
 		return Messages.PEASHOOTER_ICON;
