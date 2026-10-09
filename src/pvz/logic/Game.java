@@ -112,5 +112,9 @@ public class Game {
 		return this.zombieMngr.addZombie();
 		
 	}
-	
+	public boolean isPositionEmpty(Position pos) {
+	    return PeaShooters.PositionToString(pos) == null
+	        && SunFlowers.PositionToString(pos) == null
+	        && zombieMngr.PositionToString(pos) == null;
+	}
 }

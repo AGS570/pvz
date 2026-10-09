@@ -62,7 +62,7 @@ public class ZombiesManager {
 		if(this.remainingZombies > 0) {
 			
 			int row = randomZombieRow();
-			this.remainingZombies--;
+			
 			return addZombie(row);
 		}else return false;
 	}
@@ -73,7 +73,8 @@ public class ZombiesManager {
 
 		if(canAdd) {
 			// TODO fill your code
-			Position p = new Position(Game.NUM_COLS, row);
+			this.remainingZombies--;
+			Position p = new Position( row,Game.NUM_COLS);
 			this.zombies.insert(new Zombie(p,this.game));
 		}
 		return canAdd;
@@ -81,15 +82,20 @@ public class ZombiesManager {
 
 	
 
+	private boolean isPositionEmpty(int numCols, int row) {
+		// TODO Auto-generated method stub
+		return this.game.isPositionEmpty(new Position(row,numCols));
+	}
+
 	// por hacer------------------------------------
 	public int getRemainingZombies() {
 		// TODO Auto-generated method stub
 		return this.remainingZombies;
 	}
 
-	private boolean isPositionEmpty(int numCols, int row) {
-		// TODO Auto-generated method stub
-		return false;
+	public String PositionToString(Position pos) {
+		return this.zombies.PositionToString(pos);
 	}
+	
 	// TODO fill your code
 }
