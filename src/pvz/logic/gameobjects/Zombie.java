@@ -17,9 +17,6 @@ public class Zombie {
 		this.fr = 1;
 	}
 	
-	public Zombie(int int1, int int2) {
-		// TODO Auto-generated constructor stub
-	}
 
 	public String getDescription() {
 		// TODO Auto-generated method stub

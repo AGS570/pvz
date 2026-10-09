@@ -19,10 +19,8 @@ public class SunFlower {
 		this.pos = pos;
 		this.fr = 1;
 	}
-	public SunFlower(int int1, int int2) {
-		// TODO Auto-generated constructor stub
-		
-	}
+	
+	
 	public static  String getDescription() {
 		// TODO Auto-generated method stub
 		return Messages.SUNFLOWER_ICON;
@@ -31,7 +29,7 @@ public class SunFlower {
 		return getDescription().formatted(this.health);
 	}
 	public void update() {
-		this.game.sun();
+		this.game.sun(sunPoints);
 	}
 	public int getSun() {
 		// TODO Auto-generated method stub

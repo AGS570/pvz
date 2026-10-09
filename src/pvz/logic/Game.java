@@ -22,7 +22,8 @@ public class Game {
 	ZombieList Zombies;
 	SunflowerList SunFlowers;
 	PeaShooterList PeaShooters;
-
+	ZombiesManager zombieMngr;
+	Level level;
 	
 	//constructoras----------------------
 	public Game() {
@@ -31,6 +32,7 @@ public class Game {
 		this.PeaShooters = new PeaShooterList();
 		this.SunFlowers = new SunflowerList();
 		this.Zombies = new ZombieList();
+		
 	}
 	public Game(long seed, Level level) {
 		// TODO Auto-generated constructor stub
@@ -39,10 +41,18 @@ public class Game {
 		this.PeaShooters = new PeaShooterList();
 		this.SunFlowers = new SunflowerList();
 		this.Zombies = new ZombieList();
+		this.level = level;
+		this.rand = new Random();
+		this.zombieMngr = new ZombiesManager(this,level,rand);
 	}
 
 	public void update() {
+		this.ciclos++;
 		
+		for(int i =0; i < SunFlowers.size();i++) {
+			SunFlowers.getSun();
+		}
+		this.zombieMngr.addZombie();
 	}
 
 	public boolean hasGameFinished() {
@@ -51,7 +61,7 @@ public class Game {
 	}
 	public Object getRemainingZombies() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.Zombies.size();
 	}
 	public String positionToString(Position position) {
 		// TODO Auto-generated method stub
@@ -75,8 +85,9 @@ public class Game {
 		// TODO Auto-generated method stub
 		return this.ciclos;
 	}
-	public void sun() {
-		this.soles +=20;
+	
+	public void sun(int sunPoints) {
+		this.soles += sunPoints;
 	}
 	public void reset() {
 		// TODO Auto-generated method stub
@@ -86,22 +97,19 @@ public class Game {
 		Position pos = new Position(int1,int2);
 		// TODO Auto-generated method stub
 		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
-		return this.PeaShooters.insert(new PeaShooter(pos,this));}
+			return this.PeaShooters.insert(new PeaShooter(pos,this));}
 		else return false;
 	}
 	public boolean addSunFlower(int int1, int int2) {
 		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
 		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
-		return this.SunFlowers.insert(new SunFlower(pos,this));}
+			return this.SunFlowers.insert(new SunFlower(pos,this));}
 		else return false;
 	}
-	public boolean addZombie(int int1, int int2) {
+	public boolean addZombie() {
 		// TODO Auto-generated method stub
-		Position pos = new Position(int1,int2);
-		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
-		return this.Zombies.insert(new Zombie(pos,this));}
-		else return false;
+		return this.zombieMngr.addZombie();
 		
 	}
 	
