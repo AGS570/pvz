@@ -6,16 +6,19 @@ import pvz.view.Messages;
 
 public class PeaShooter {
 
+	private static int COST = 50;
 	private int health;
 	private int fr;
 	private Game game;
 	private Position pos;
+	private int cost;
 	
 	public PeaShooter(Position pos, Game game) {
 		this.health = 3;
 		this.game = game;
 		this.pos = pos;
 		this.fr = 1;
+		cost = 50;
 	}
 	
 	public PeaShooter(int int1, int int2, Game game) {
@@ -24,11 +27,12 @@ public class PeaShooter {
 		this.health = 3;
 		this.game = game;
 		this.fr = 1;	
+		cost = 50;
 	}
 
 	public static String getDescription() {
 		// TODO Auto-generated method stub
-		return Messages.PEASHOOTER_ICON;
+		return Messages.PEASHOOTER_DESCRIPTION;
 	}
 
 	public boolean isInPosition(Position pos2) {
@@ -40,9 +44,12 @@ public class PeaShooter {
 	}
 	
 	public String getIcon() {
-		return getDescription().formatted(this.health);
+		return Messages.PEASHOOTER_ICON.formatted(this.health);
 	}
 	
+	public static int getCost() {
+		return COST;
+	}
 	
 
 }

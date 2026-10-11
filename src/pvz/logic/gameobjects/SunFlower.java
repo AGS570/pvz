@@ -6,7 +6,7 @@ import pvz.logic.Position;
 
 public class SunFlower {
 
-
+	private static int COST = 50;
 	private int health;
 	private int fr;
 	private Game game;
@@ -26,10 +26,10 @@ public class SunFlower {
 	
 	public static  String getDescription() {
 		// TODO Auto-generated method stub
-		return Messages.SUNFLOWER_ICON;
+		return Messages.SUNFLOWER_DESCRIPTION;
 	}
 	public String getIcon() {
-		return getDescription().formatted(this.health);
+		return Messages.SUNFLOWER_ICON.formatted(this.health);
 	}
 	
 	public int getSun() {
@@ -49,5 +49,8 @@ public class SunFlower {
 			return true;
 		}
 		return false;
+	}
+	public static int getCost() {
+		return COST;
 	}
 }

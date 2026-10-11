@@ -68,15 +68,21 @@ public class Controller {
 						case "l":
 						case "list":
 							//TODO
-							view.showMessage(Messages.SUNFLOWER_DESCRIPTION + "\n" + Messages.PEASHOOTER_DESCRIPTION);
+							view.showMessage(Messages.SUNFLOWER_DESCRIPTION.formatted(20, 0, 1)+ "\n"+ Messages.PEASHOOTER_DESCRIPTION.formatted(50, 1, 3));
 							break;
 						case "a":
 						case "add":
 							if(words.length >= 4) {
 								if(words[1].equalsIgnoreCase("peaShooter") || words[1].equalsIgnoreCase("p")) {
-									cycleAdvanced = 	this.game.addPeaShooter(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+									if(game.canAffordPea()) {
+										cycleAdvanced = 	this.game.addPeaShooter(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+									}else
+										view.showMessage(Messages.NOT_ENOUGH_COINS);
 								}else if(words[1].equalsIgnoreCase("sunFlower") || words[1].equalsIgnoreCase("s")) {
-									cycleAdvanced = this.game.addSunFlower(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+									if(game.canAffordSun()) {
+										cycleAdvanced = this.game.addSunFlower(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+									}else
+										view.showError(Messages.NOT_ENOUGH_COINS);
 								}else
 									view.showError(Messages.INVALID_GAME_OBJECT);
 							}else {

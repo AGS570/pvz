@@ -93,13 +93,19 @@ public class Game {
 	}
 	
 	public boolean addPeaShooter(int int1, int int2) {
+		if(this.soles >= PeaShooter.getCost()) {	
 		Position pos = new Position(int1,int2);
+		this.soles -= PeaShooter.getCost();
 		// TODO Auto-generated method stub
 		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
 			return this.PeaShooters.insert(new PeaShooter(pos,this));}
 		else return false;
+		}else {
+			return false;
+		} 
 	}
 	public boolean addSunFlower(int int1, int int2) {
+		
 		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
 		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
@@ -116,4 +122,14 @@ public class Game {
 	        && SunFlowers.PositionToString(pos) == null
 	        && zombieMngr.PositionToString(pos) == null;
 	}
+	
+	public boolean canAffordPea() {
+		if(this.soles >= PeaShooter.getCost()) return true;
+		return false;
+	}
+	public boolean canAffordSun() {
+		if(this.soles >= SunFlower.getCost()) return true;
+		return false;
+	}
+	
 }
