@@ -119,7 +119,7 @@ public class Game {
 		Position pos = new Position(int1,int2);
 		
 		// TODO Auto-generated method stub
-		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+		if(pos.isValid(NUM_ROWS, NUM_COLS)&& isPositionEmpty( pos)) {
 			this.soles -= PeaShooter.getCost();
 			return this.PeaShooters.insert(new PeaShooter(pos,this));}
 		else return false;
@@ -131,7 +131,7 @@ public class Game {
 		
 		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
-		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+		if(pos.isValid(NUM_ROWS, NUM_COLS) && isPositionEmpty( pos) ) {
 			this.soles -= SunFlower.getCost();
 			return this.SunFlowers.insert(new SunFlower(pos,this));}
 		else return false;
