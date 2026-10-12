@@ -27,7 +27,7 @@ public class Position {
     	return false;
     }
     public boolean isPositionEmpty(Position pos) {
-    	return isPositionEmpty(pos)
+    	return isPositionEmpty(pos);
     }
 	
 }

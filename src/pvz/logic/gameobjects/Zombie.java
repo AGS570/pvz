@@ -10,13 +10,15 @@ public class Zombie {
 	private Game game;
 	private Position pos;
 	private int moveCycles;
+	private int damage;
 	
 	public Zombie(Position pos, Game game) {
-		this.health = 3;
+		this.health = 5;
 		this.game = game;
 		this.pos = pos;
 		this.fr = 1;
 		this.moveCycles = 2;
+		this.damage = 1;
 	}
 	
 
@@ -52,7 +54,7 @@ public class Zombie {
 			}
 		}else {
 			if(this.game.plantsAhead(nextPos)) {
-				this.game.attack(nextPos);
+				this.game.attack(nextPos,this.damage);
 			}
 		}
 	}

@@ -50,6 +50,11 @@ public class PeaShooter {
 	public static int getCost() {
 		return COST;
 	}
+
+	public void receiveInteraction(int damage) {
+		// TODO Auto-generated method stub
+		this.health -= damage;
+	}
 	
 
 }

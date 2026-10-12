@@ -159,8 +159,10 @@ public class Game {
 	public void finishGame() {
 		this.isGameFinished = true;
 	}
-	public void attack(Position nextPos) {
+	
+	public void attack(Position nextPos, int damage) {
 		// TODO Auto-generated method stub
-		
+		this.PeaShooters.receiveInteraction(nextPos,damage);
+		this.SunFlowers.receiveInteraction(nextPos,damage);
 	}
 }
