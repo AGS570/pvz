@@ -15,7 +15,7 @@ public class SunFlower {
 	private int cycles;
 	
 	public SunFlower(Position pos, Game game) {
-		this.health = 3;
+		this.health = 1;
 		this.game = game;
 		this.pos = pos;
 		this.fr = 1;

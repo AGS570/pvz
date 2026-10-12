@@ -61,6 +61,7 @@ public class Controller {
 						case "reset":
 							this.game.reset();
 							cycleAdvanced = false;
+							view.showGame();
 							break;
 						case"h":
 						case "help":

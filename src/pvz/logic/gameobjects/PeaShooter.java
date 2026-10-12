@@ -13,6 +13,7 @@ public class PeaShooter {
 	private Position pos;
 	private int cost;
 	private int shtFr;
+	private int damage;
 	
 	public PeaShooter(Position pos, Game game) {
 		this.health = 3;
@@ -21,6 +22,7 @@ public class PeaShooter {
 		this.fr = 1;
 		cost = 50;
 		this.shtFr = 1;
+		this.damage =1;
 	}
 	
 	public PeaShooter(int int1, int int2, Game game) {
@@ -34,7 +36,10 @@ public class PeaShooter {
 	}
 
 	public void update() {
-		
+		Position target =  this.game.zombieInRange(pos);
+		if (target != null) {
+			game.attack(target,damage);
+		}
 	}
 	public static String getDescription() {
 		// TODO Auto-generated method stub
@@ -64,6 +69,10 @@ public class PeaShooter {
 	
 	public boolean isAlive() {
 		return this.health>0;
+	}
+	
+	public void shoot() {
+		this.game.shoot();
 	}
 
 }

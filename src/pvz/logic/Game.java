@@ -157,6 +157,18 @@ public class Game {
 		       || SunFlowers.PositionToString(pos) != null;
 	}
 	
+	public Position zombieInRange(Position pos) {
+		Position nextPos;
+		for (int i = pos.getCol()+1; i < NUM_COLS; i++) {
+			nextPos = new Position(pos.getRow(),i);
+			if(zombieMngr.PositionToString(new Position(nextPos.getRow(),nextPos.getCol())) != null) {
+				return nextPos;
+			}
+		}
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 	public void finishGame() {
 		this.isGameFinished = true;
@@ -166,5 +178,9 @@ public class Game {
 		// TODO Auto-generated method stub
 		this.PeaShooters.receiveInteraction(nextPos,damage);
 		this.SunFlowers.receiveInteraction(nextPos,damage);
+	}
+	public void shoot() {
+		// TODO Auto-generated method stub
+		
 	}
 }
