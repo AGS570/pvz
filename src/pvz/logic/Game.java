@@ -88,7 +88,17 @@ public class Game {
 	
 	
 	public void reset() {
-		// TODO Auto-generated method stub
+		
+		//reseteamos valores
+		this.soles=50;
+		this.ciclos=0;
+		
+		//vaciar listas
+		this.PeaShooters=new PeaShooterList();
+		this.SunFlowers=new SunflowerList();
+		
+		this.zombieMngr=new ZombiesManager(this,this.level,this.rand);
+		
 		
 	}
 	

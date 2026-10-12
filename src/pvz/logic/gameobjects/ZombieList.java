@@ -37,4 +37,9 @@ private List<Zombie> lista;
 
 	    return null;
 	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 }
