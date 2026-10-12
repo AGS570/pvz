@@ -78,7 +78,7 @@ public class Controller {
 								if(words[1].equalsIgnoreCase("peaShooter") || words[1].equalsIgnoreCase("p")) {
 									if(game.canAffordPea()) {
 										String result = this.game.addPeaShooter(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
-										if (result != "1") {
+										if (!result.equals("1")) {
 											cycleAdvanced = true;
 										}else view.showMessage(result);
 									}else
@@ -86,7 +86,7 @@ public class Controller {
 								}else if(words[1].equalsIgnoreCase("sunFlower") || words[1].equalsIgnoreCase("s")) {
 									if(game.canAffordSun()) {
 										String result = this.game.addSunFlower(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
-										if (result != "1") {
+										if (!result.equals("1")) {
 											cycleAdvanced = true;
 										}else view.showMessage(result);
 									}else
