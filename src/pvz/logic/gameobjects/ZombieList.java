@@ -37,9 +37,10 @@ private List<Zombie> lista;
 
 	    return null;
 	}
-
+	
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		for(int i =0; i < this.lista.size(); i++) {
+			this.lista.get(i).update();
+		}
 	}
 }

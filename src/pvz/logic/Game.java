@@ -141,5 +141,10 @@ public class Game {
 		if(this.soles >= SunFlower.getCost()) return true;
 		return false;
 	}
+	public boolean plantsAhead(Position pos) {
+		// TODO Auto-generated method stub
+		return PeaShooters.PositionToString(pos) != null
+		       || SunFlowers.PositionToString(pos) != null;
+	}
 	
 }
