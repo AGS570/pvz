@@ -53,9 +53,13 @@ public class Game {
 	public void update() {
 		this.ciclos++;
 		
+		
 		for(int i =0; i < SunFlowers.size();i++) {
 			this.soles += SunFlowers.getSun();
 		}
+		
+		this.zombieMngr.update();
+		
 		this.zombieMngr.addZombie();
 	}
 

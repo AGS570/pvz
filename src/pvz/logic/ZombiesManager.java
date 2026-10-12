@@ -83,6 +83,10 @@ public class ZombiesManager {
 	public void update(){
 		this.zombies.update();
 	}
+	
+	
+	
+
 
 	private boolean isPositionEmpty(int numCols, int row) {
 		// TODO Auto-generated method stub
