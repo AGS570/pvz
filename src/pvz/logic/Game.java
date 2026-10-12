@@ -132,7 +132,7 @@ public class Game {
 		} 
 	}
 	public String addSunFlower(int int1, int int2) {
-		if(this.soles >= PeaShooter.getCost()) {	
+		if(this.soles >= SunFlower.getCost()) {	
 			Position pos = new Position(int1,int2);
 			
 			// TODO Auto-generated method stub
