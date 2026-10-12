@@ -12,6 +12,7 @@ public class PeaShooter {
 	private Game game;
 	private Position pos;
 	private int cost;
+	private int shtFr;
 	
 	public PeaShooter(Position pos, Game game) {
 		this.health = 3;
@@ -19,6 +20,7 @@ public class PeaShooter {
 		this.pos = pos;
 		this.fr = 1;
 		cost = 50;
+		this.shtFr = 1;
 	}
 	
 	public PeaShooter(int int1, int int2, Game game) {
@@ -28,8 +30,12 @@ public class PeaShooter {
 		this.game = game;
 		this.fr = 1;	
 		cost = 50;
+		this.shtFr = 1;
 	}
 
+	public void update() {
+		
+	}
 	public static String getDescription() {
 		// TODO Auto-generated method stub
 		return Messages.PEASHOOTER_DESCRIPTION;
@@ -56,5 +62,8 @@ public class PeaShooter {
 		this.health -= damage;
 	}
 	
+	public boolean isAlive() {
+		return this.health>0;
+	}
 
 }

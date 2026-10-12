@@ -40,7 +40,9 @@ private List<Zombie> lista;
 	
 	public void update() {
 		for(int i =0; i < this.lista.size(); i++) {
-			this.lista.get(i).update();
+			if (this.lista.get(i).isAlive())
+				this.lista.get(i).update();
+			else remove(lista.get(i));
 		}
 	}
 }

@@ -65,4 +65,8 @@ public class Zombie {
 		this.pos = nextPos;
 	}
 	
+	public boolean isAlive() {
+		return this.health>0;
+	}
+	
 }

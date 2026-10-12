@@ -59,4 +59,14 @@ public class SunFlower {
 		// TODO Auto-generated method stub
 		this.health -= damage;
 	}
+
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public boolean isAlive() {
+		return this.health>0;
+	}
 }

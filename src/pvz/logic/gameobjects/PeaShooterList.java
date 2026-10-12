@@ -24,6 +24,14 @@ public class PeaShooterList {
 		return this.lista.size();
 	}
 	
+	public void update() {
+		for(int i =0; i < this.lista.size(); i++) {
+			if (this.lista.get(i).isAlive())
+				this.lista.get(i).update();
+			else remove(lista.get(i));
+		}
+	}
+	
 	public String PositionToString(Position pos) {
 	    boolean encontrada = false;
 	    int i = 0;
