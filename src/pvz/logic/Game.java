@@ -137,7 +137,7 @@ public class Game {
 			
 			// TODO Auto-generated method stub
 			if(pos.isValid(NUM_ROWS, NUM_COLS)&& isPositionEmpty( pos)) {
-				this.soles -= PeaShooter.getCost();
+				this.soles -= SunFlower.getCost();
 				if(this.SunFlowers.insert(new SunFlower(pos,this))) {
 					return "1";
 				}else return Messages.ERROR;
