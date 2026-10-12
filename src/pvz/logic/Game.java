@@ -58,6 +58,8 @@ public class Game {
 			this.soles += SunFlowers.getSun();
 		}
 		
+		this.PeaShooters.update();
+		this.SunFlowers.update();
 		this.zombieMngr.update();
 		
 		this.zombieMngr.addZombie();
