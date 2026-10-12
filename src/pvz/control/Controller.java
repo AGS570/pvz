@@ -77,12 +77,18 @@ public class Controller {
 							if(words.length >= 4) {
 								if(words[1].equalsIgnoreCase("peaShooter") || words[1].equalsIgnoreCase("p")) {
 									if(game.canAffordPea()) {
-										cycleAdvanced = 	this.game.addPeaShooter(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+										String result = this.game.addPeaShooter(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+										if (result != "1") {
+											cycleAdvanced = true;
+										}else view.showMessage(result);
 									}else
 										view.showMessage(Messages.NOT_ENOUGH_COINS);
 								}else if(words[1].equalsIgnoreCase("sunFlower") || words[1].equalsIgnoreCase("s")) {
 									if(game.canAffordSun()) {
-										cycleAdvanced = this.game.addSunFlower(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+										String result = this.game.addSunFlower(Integer.parseInt(words[2]), Integer.parseInt(words[3]));
+										if (result != "1") {
+											cycleAdvanced = true;
+										}else view.showMessage(result);
 									}else
 										view.showError(Messages.NOT_ENOUGH_COINS);
 								}else

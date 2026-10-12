@@ -10,6 +10,7 @@ import pvz.logic.gameobjects.SunFlower;
 import pvz.logic.gameobjects.SunflowerList;
 import pvz.logic.gameobjects.Zombie;
 import pvz.logic.gameobjects.ZombieList;
+import pvz.view.Messages;
 
 public class Game {
 	public static final int NUM_ROWS = 4;
@@ -53,7 +54,7 @@ public class Game {
 	public void update() {
 		this.ciclos++;
 		
-		if(!this.zombieMngr.zombiesRemain()) {
+		if(this.zombieMngr.zombiesRemain()) {
 			finishGame();
 			return;
 		}
@@ -114,27 +115,37 @@ public class Game {
 		
 	}
 	
-	public boolean addPeaShooter(int int1, int int2) {
+	public String addPeaShooter(int int1, int int2) {
 		if(this.soles >= PeaShooter.getCost()) {	
 		Position pos = new Position(int1,int2);
 		
 		// TODO Auto-generated method stub
 		if(pos.isValid(NUM_ROWS, NUM_COLS)&& isPositionEmpty( pos)) {
 			this.soles -= PeaShooter.getCost();
-			return this.PeaShooters.insert(new PeaShooter(pos,this));}
-		else return false;
+			if(this.PeaShooters.insert(new PeaShooter(pos,this))) {
+				return "1";
+			}else return Messages.ERROR;
+		}
+		else return Messages.INVALID_POSITION;
 		}else {
-			return false;
+			return Messages.NOT_ENOUGH_COINS;
 		} 
 	}
-	public boolean addSunFlower(int int1, int int2) {
-		
-		// TODO Auto-generated method stub
-		Position pos = new Position(int1,int2);
-		if(pos.isValid(NUM_ROWS, NUM_COLS) && isPositionEmpty( pos) ) {
-			this.soles -= SunFlower.getCost();
-			return this.SunFlowers.insert(new SunFlower(pos,this));}
-		else return false;
+	public String addSunFlower(int int1, int int2) {
+		if(this.soles >= PeaShooter.getCost()) {	
+			Position pos = new Position(int1,int2);
+			
+			// TODO Auto-generated method stub
+			if(pos.isValid(NUM_ROWS, NUM_COLS)&& isPositionEmpty( pos)) {
+				this.soles -= PeaShooter.getCost();
+				if(this.SunFlowers.insert(new SunFlower(pos,this))) {
+					return "1";
+				}else return Messages.ERROR;
+			}
+			else return Messages.INVALID_POSITION;
+			}else {
+				return Messages.NOT_ENOUGH_COINS;
+			} 
 	}
 	public boolean addZombie() {
 		// TODO Auto-generated method stub
