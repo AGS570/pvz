@@ -68,5 +68,11 @@ public class Zombie {
 	public boolean isAlive() {
 		return this.health>0;
 	}
+
+
+	public void receiveInteraction(int damage) {
+		// TODO Auto-generated method stub
+		this.health -= damage;
+	}
 	
 }

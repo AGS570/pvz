@@ -102,6 +102,11 @@ public class ZombiesManager {
 	public String PositionToString(Position pos) {
 		return this.zombies.PositionToString(pos);
 	}
+
+	public void receiveInteraction(Position Pos, int damage) {
+		// TODO Auto-generated method stub
+		this.zombies.receiveInteraction(Pos,damage);
+	}
 	
 	// TODO fill your code
 }

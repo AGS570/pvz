@@ -6,7 +6,7 @@ import pvz.logic.Position;
 
 public class SunFlower {
 
-	private static int COST = 50;
+	private static int COST =20;
 	private int health;
 	private int fr;
 	private Game game;

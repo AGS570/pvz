@@ -72,7 +72,7 @@ public class PeaShooter {
 	}
 	
 	public void shoot() {
-		this.game.shoot();
+		this.game.shoot(new Position(this.pos.getRow(),this.pos.getCol()+1),damage);
 	}
 
 }

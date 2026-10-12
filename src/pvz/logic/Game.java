@@ -54,9 +54,7 @@ public class Game {
 		this.ciclos++;
 		
 		
-		for(int i =0; i < SunFlowers.size();i++) {
-			this.soles += SunFlowers.getSun();
-		}
+		this.soles += SunFlowers.getSun();
 		
 		this.PeaShooters.update();
 		this.SunFlowers.update();
@@ -115,9 +113,10 @@ public class Game {
 	public boolean addPeaShooter(int int1, int int2) {
 		if(this.soles >= PeaShooter.getCost()) {	
 		Position pos = new Position(int1,int2);
-		this.soles -= PeaShooter.getCost();
+		
 		// TODO Auto-generated method stub
 		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+			this.soles -= PeaShooter.getCost();
 			return this.PeaShooters.insert(new PeaShooter(pos,this));}
 		else return false;
 		}else {
@@ -129,6 +128,7 @@ public class Game {
 		// TODO Auto-generated method stub
 		Position pos = new Position(int1,int2);
 		if(pos.isValid(NUM_ROWS, NUM_COLS)) {
+			this.soles -= SunFlower.getCost();
 			return this.SunFlowers.insert(new SunFlower(pos,this));}
 		else return false;
 	}
@@ -179,8 +179,8 @@ public class Game {
 		this.PeaShooters.receiveInteraction(nextPos,damage);
 		this.SunFlowers.receiveInteraction(nextPos,damage);
 	}
-	public void shoot() {
+	public void shoot(Position nextPos, int damage) {
 		// TODO Auto-generated method stub
-		
+		this.zombieMngr.receiveInteraction(nextPos,damage);
 	}
 }
