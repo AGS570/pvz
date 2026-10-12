@@ -119,6 +119,12 @@ public class Controller {
 						view.showGame();
 					}
 				}
-				view.showEndMessage();
+				if (!game.hasGameFinished()) {
+				    view.showMessage(Messages.PLAYER_QUITS);
+				} else if (game.playerWins()) {
+				    view.showMessage(Messages.PLAYER_WINS);
+				} else {
+				    view.showMessage(Messages.ZOMBIES_WIN);
+				}
 	}
 }

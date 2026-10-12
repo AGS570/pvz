@@ -21,12 +21,14 @@ public class Game {
 	private int ciclos ;
 	private Random rand;
 	
+	
 	//ZombieList Zombies;
 	SunflowerList SunFlowers;
 	PeaShooterList PeaShooters;
 	ZombiesManager zombieMngr;
 	private Level level;
 	private boolean isGameFinished;
+	private boolean playerWins;
 	
 	//constructoras----------------------
 	public Game() {
@@ -55,7 +57,7 @@ public class Game {
 		this.ciclos++;
 		
 		if(this.zombieMngr.zombiesRemain()) {
-			finishGame();
+			finishGame(true);
 			return;
 		}
 		
@@ -112,7 +114,8 @@ public class Game {
 		
 		this.zombieMngr=new ZombiesManager(this,this.level,this.rand);
 		
-		
+		this.isGameFinished=false;
+		this.playerWins=false;	
 	}
 	
 	public String addPeaShooter(int int1, int int2) {
@@ -187,6 +190,15 @@ public class Game {
 	
 	public void finishGame() {
 		this.isGameFinished = true;
+	}
+	
+	public void finishGame(boolean playerWins) {
+	    this.isGameFinished = true;
+	    this.playerWins = playerWins;
+	}
+
+	public boolean playerWins() {
+	    return this.playerWins;
 	}
 	
 	public void attack(Position nextPos, int damage) {

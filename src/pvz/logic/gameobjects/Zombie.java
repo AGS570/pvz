@@ -39,7 +39,7 @@ public class Zombie {
 	public void update() {
 		// TODO Auto-generated method stub
 		if (this.pos.getCol() == 0) {
-			this.game.finishGame();
+			this.game.finishGame(false);
 			return;
 		}
 		Position nextPos = new Position(this.pos.getRow(),this.pos.getCol()-1);
