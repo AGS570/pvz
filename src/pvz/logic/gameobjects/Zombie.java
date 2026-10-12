@@ -36,27 +36,31 @@ public class Zombie {
 
 	public void update() {
 		// TODO Auto-generated method stub
+		if (this.pos.getCol() == 0) {
+			this.game.finishGame();
+			return;
+		}
 		Position nextPos = new Position(this.pos.getRow(),this.pos.getCol()-1);
 		
 		if(this.game.isPositionEmpty(nextPos)) {
 			
 			if(moveCycles <= 0) {
-				movement();
+				movement(nextPos);
 				moveCycles = 2;
 			}else {
 				this.moveCycles--;
 			}
 		}else {
 			if(this.game.plantsAhead(nextPos)) {
-				
+				this.game.attack(nextPos);
 			}
 		}
 	}
 
 
-	private void movement() {
+	private void movement(Position nextPos) {
 		// TODO Auto-generated method stub
-		
+		this.pos = nextPos;
 	}
 	
 }

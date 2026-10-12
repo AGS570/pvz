@@ -16,14 +16,16 @@ public class Game {
 	public static final int NUM_COLS = 8;
 	
 	
-	int soles ;
-	int ciclos ;
-	Random rand;
+	private int soles ;
+	private int ciclos ;
+	private Random rand;
+	
 	//ZombieList Zombies;
 	SunflowerList SunFlowers;
 	PeaShooterList PeaShooters;
 	ZombiesManager zombieMngr;
-	Level level;
+	private Level level;
+	private boolean isGameFinished;
 	
 	//constructoras----------------------
 	public Game() {
@@ -32,6 +34,7 @@ public class Game {
 		this.PeaShooters = new PeaShooterList();
 		this.SunFlowers = new SunflowerList();
 		//this.Zombies = new ZombieList();
+		
 		
 	}
 	public Game(long seed, Level level) {
@@ -44,6 +47,7 @@ public class Game {
 		this.level = level;
 		this.rand = new Random(seed);
 		this.zombieMngr = new ZombiesManager(this,level,rand);
+		isGameFinished = false;
 	}
 
 	public void update() {
@@ -57,7 +61,7 @@ public class Game {
 
 	public boolean hasGameFinished() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.isGameFinished;
 	}
 	public Object getRemainingZombies() {
 		// TODO Auto-generated method stub
@@ -147,4 +151,12 @@ public class Game {
 		       || SunFlowers.PositionToString(pos) != null;
 	}
 	
+	
+	public void finishGame() {
+		this.isGameFinished = true;
+	}
+	public void attack(Position nextPos) {
+		// TODO Auto-generated method stub
+		
+	}
 }
