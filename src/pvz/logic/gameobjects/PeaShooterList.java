@@ -46,15 +46,15 @@ public class PeaShooterList {
 	    return null;
 	}
 	
-	public boolean receiveInteraction(Position nextPos, int damage) {
+	public void receiveInteraction(Position nextPos, int damage) {
 		// TODO Auto-generated method stub
 		for(int i =0 ; i < lista.size();i++) {
 			if(lista.get(i).isInPosition(nextPos)) {
 				lista.get(i).receiveInteraction(damage);
-				return true;
+				return ;
 			}
 		}
-		return false;
+		return;
 	}
 	
 }

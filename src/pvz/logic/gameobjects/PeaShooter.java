@@ -38,7 +38,7 @@ public class PeaShooter {
 	public void update() {
 		Position target =  this.game.zombieInRange(pos);
 		if (target != null) {
-			game.attack(target,damage);
+			game.shoot(target,damage);
 		}
 	}
 	public static String getDescription() {
