@@ -53,6 +53,10 @@ public class Game {
 	public void update() {
 		this.ciclos++;
 		
+		if(!this.zombieMngr.zombiesRemain()) {
+			finishGame();
+			return;
+		}
 		
 		this.soles += SunFlowers.getSun();
 		

@@ -56,4 +56,9 @@ private List<Zombie> lista;
 		}
 		return ;
 		}
+
+		public boolean isEmpty() {
+			// TODO Auto-generated method stub
+			return this.lista.isEmpty();
+		}
 }
