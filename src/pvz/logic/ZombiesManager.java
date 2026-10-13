@@ -75,7 +75,7 @@ public class ZombiesManager {
 			// TODO fill your code
 			this.remainingZombies--;
 			Position p = new Position( row,Game.NUM_COLS-1);
-			this.zombies.insert(new Zombie(p,this.game));
+			this.zombies.insert(new Zombie(p,this));
 		}
 		return canAdd;
 	}
@@ -111,5 +111,25 @@ public class ZombiesManager {
 	// TODO fill your code
 	public boolean zombiesRemain() {
 		return (this.remainingZombies == 0 && this.zombies.isEmpty());
+	}
+
+	public boolean plantsAhead(Position nextPos) {
+		// TODO Auto-generated method stub
+		return this.game.plantsAhead(nextPos);
+	}
+
+	public void attack(Position nextPos, int damage) {
+		// TODO Auto-generated method stub
+		this.game.attack(nextPos, damage);
+	}
+
+	public boolean isPositionEmpty(Position nextPos) {
+		// TODO Auto-generated method stub
+		return this.game.isPositionEmpty(nextPos);
+	}
+
+	public void finishGame(boolean b) {
+		// TODO Auto-generated method stub
+		this.game.finishGame(b);
 	}
 }

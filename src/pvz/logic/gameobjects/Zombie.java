@@ -2,19 +2,20 @@ package pvz.logic.gameobjects;
 
 import pvz.logic.Game;
 import pvz.logic.Position;
+import pvz.logic.ZombiesManager;
 import pvz.view.Messages;
 
 public class Zombie {
 	private int health;
 	private int fr;
-	private Game game;
+	private ZombiesManager zmn;
 	private Position pos;
 	private int moveCycles;
 	private int damage;
 	
-	public Zombie(Position pos, Game game) {
+	public Zombie(Position pos, ZombiesManager zmn) {
 		this.health = 5;
-		this.game = game;
+		this.zmn = zmn;
 		this.pos = pos;
 		this.fr = 1;
 		this.moveCycles = 2;
@@ -29,7 +30,7 @@ public class Zombie {
 	
 	public boolean isInPosition(Position pos2) {
 		// TODO Auto-generated method stub
-		if (pos.getCol() == pos2.getCol() & pos.getRow() == pos2.getRow()) {
+		if (pos.getCol() == pos2.getCol() && pos.getRow() == pos2.getRow()) {
 			return true;
 		}
 		return false;
@@ -39,12 +40,12 @@ public class Zombie {
 	public void update() {
 		// TODO Auto-generated method stub
 		if (this.pos.getCol() == 0) {
-			this.game.finishGame(false);
+			this.zmn.finishGame(false);
 			return;
 		}
 		Position nextPos = new Position(this.pos.getRow(),this.pos.getCol()-1);
 		
-		if(this.game.isPositionEmpty(nextPos)) {
+		if(this.zmn.isPositionEmpty(nextPos)) {
 			
 			if(moveCycles <= 0) {
 				movement(nextPos);
@@ -53,8 +54,8 @@ public class Zombie {
 				this.moveCycles--;
 			}
 		}else {
-			if(this.game.plantsAhead(nextPos)) {
-				this.game.attack(nextPos,this.damage);
+			if(this.zmn.plantsAhead(nextPos)) {
+				this.zmn.attack(nextPos,this.damage);
 			}
 		}
 	}
